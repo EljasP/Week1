@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        text-align: center;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- I did the JavaScript part here in the HTML file. let me know if i should do it in separate file.
+  And I also didn't know should I do all the steps of the exercise in separate files or all in the same HTML document.  -->
+
+    <!-- Eljas Puukko 0611010  -->
+    <!-- 1. Hello World! -->
+    <h1 id="test">Hello World!</h1>
+    <!-- 2. Creating a button -->
+    <button onclick="doSomething()" style="font-size: 30px;">Click me!</button>
+    <hr />
+    <!-- 4. Unordered list -->
+    <br />
+    <br />
+    <button id="add-data" onclick="addText()" style="font-size: 30px;">
+      Add text to list
+    </button>
+
+    <button onclick="addTxtArea()" style="font-size: 30px;">
+      Add customized text to list
+    </button>
+    <br />
+    <br />
+    <textarea
+      id="custom"
+      placeholder="Write here..."
+      style="width: 567px;"
+    ></textarea>
+    <hr />
+    <ul id="list"></ul>
+    <!-- 5. Custom text to list -->
+    <script>
+      // 3. Button DOM changes
+      function doSomething() {
+        console.log("Hello World!");
+        document.getElementById("test").innerHTML = "My notebook";
+      }
+      //    4. Unordered list
+      function addText() {
+        var ul = document.getElementById("list");
+        var li = document.createElement("li");
+        var text = document.createTextNode(
+          "Lorem ipsum dolor sit amet, nemore sententiae pri ex. Atomorum democritum pri ei, quo putent tincidunt interesset ad. Vivendo perfecto hendrerit cu eos, eum et stet alienum. Ea tempor scriptorem cum, sit possit melius fastidii et, vis ex wisi liber concludaturque. Cu ullum eligendi per, ei eos enim ludus volutpat, eum ne vitae legere. Purto vivendo officiis per ei. Ex facer voluptua usu, eos no reque graece delicatissimi."
+        );
+        li.appendChild(text);
+        ul.appendChild(li);
+      }
+      // 5. Custon text to list
+      function addTxtArea() {
+        var custom = document.getElementById("custom").value;
+        var listNode = document.getElementById("list");
+        var liNode = document.createElement("LI");
+        var txtNode = document.createTextNode(custom);
+        liNode.appendChild(txtNode);
+        listNode.appendChild(liNode);
+      }
+    </script>
+  </body>
+</html>
